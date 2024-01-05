@@ -40,69 +40,9 @@ const diccionario = {
   },
 };
 
-// const App = () => {
-//   const [inputValue, setInputValue] = useState("");
-//   const [data, setData] = useState(diccionario);
-//   const [bool, setBool] = useState(false);
-
-//   const onSubmit = (e) => {
-//     e.preventDefault();
-//     if (inputValue.trim().length >= 1) {
-//       setBool(true);
-//     }
-//   };
-
-//   const moverAlPrincipio = (clave) => {
-//     setData((prevData) => {
-//       const nuevoData = { [clave]: prevData[clave], ...prevData };
-//       return nuevoData;
-//     });
-//   };
-
-//   useEffect(() => {
-//     const intervalId = setInterval(() => {
-//       if (inputValue !== "" && bool) {
-//         moverAlPrincipio(inputValue);
-//         setData((prevProducts) => {
-//           if (prevProducts.length > 1 && prevProducts) {
-//             return prevProducts.slice(0, -1);
-//           } else {
-//             return prevProducts;
-//           }
-//         });
-//       }
-//     }, 1000);
-
-//     return () => clearInterval(intervalId);
-//   }, [inputValue]);
-
-//   const onInputChange = (e) => {
-//     setInputValue(e.target.value);
-//   };
-
-//   return (
-//     <form onSubmit={(e) => onSubmit(e)}>
-//       <input
-//         type="text"
-//         placeholder="Filtrar por nombre"
-//         value={inputValue}
-//         onChange={onInputChange}
-//       ></input>
-//       <div>
-//         {Object.keys(data).map((key) => (
-//           <Productos key={key} data={data[key]}></Productos>
-//         ))}
-//       </div>
-//     </form>
-//   );
-// };
-
-// export default App;
-
 const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [data, setData] = useState(diccionario);
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const [bool, setBool] = useState(false);
 
   const moverAlPrincipio = (clave) => {
@@ -124,13 +64,13 @@ const App = () => {
       if (inputValue !== "" && bool) {
         moverAlPrincipio(inputValue);
 
-        setData((prevProducts) => {
-          if (prevProducts.length > 1) {
-            return prevProducts.slice(0, -1);
-          } else {
-            return prevProducts;
-          }
-        });
+        // setData((prevProducts) => {
+        //   if (prevProducts.length > 1) {
+        //     return prevProducts.slice(0, -1);
+        //   } else {
+        //     return prevProducts;
+        //   }
+        // });
       }
     }, 1000);
 
