@@ -1,0 +1,3 @@
+Generaria un proceso almacenado que se ejecute 1 vez al dia, principalmente en la mañana.
+
+Dicho proceso agruparia segun EAN para calcular la cantidad de Markets quecomercializan dicho producto.
